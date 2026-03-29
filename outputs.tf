@@ -6,14 +6,10 @@ output "public_ip" {
   value = aws_instance.sandbox_ec2.public_ip
 }
 
-output "private_ip" {
-  value = aws_instance.sandbox_ec2.private_ip
+output "subnet_used" {
+  value = data.aws_subnet.selected_subnet.id
 }
 
-output "security_group_id" {
-  value = aws_security_group.sandbox_sg.id
-}
-
-output "owner" {
-  value = var.developer_name
+output "vpc_used" {
+  value = data.aws_vpc.selected_vpc.id
 }
